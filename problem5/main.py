@@ -1,7 +1,13 @@
 def pangkat(base, pangkat):
-    # your code here
-    return 'error response'
-
+    if pangkat == 0:
+        return 1
+    elif pangkat < 0:
+        return 1 / pangkat(base, -pangkat)
+    else:
+        result = 1
+        for _ in range(pangkat):
+            result *= base
+        return result
 
 if __name__ == '__main__':
     print(pangkat(2, 3)) # 8
